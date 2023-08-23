@@ -1,0 +1,40 @@
+caption {
+    padding: 12px;
+    font-size: 36px;
+}
+#libTable {
+    width: 80%;
+    justify-self: center;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#libTable thead {
+    background-color: #007bff;
+    color: white;
+}
+
+#libTable thead th {
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+#libTable tbody {
+    background-color: #f8f9fa;
+}
+
+#libTable tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+#libTable tbody td {
+    padding: 10px;
+}
+
+/* Hover effect for rows */
+#libTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
