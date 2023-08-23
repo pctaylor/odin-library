@@ -42,3 +42,108 @@ myLibrary.forEach(obj => {
         valueCell.textContent = obj[key];
     }
 });
+
+// User can delete a row by selecting the delete button
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Function to add a delete button next to each row
+    function addDeleteButtons() {
+        // Get the tbody and button container elements by their ids
+        const tbody = document.getElementById("libTable").getElementsByTagName("tbody")[0];
+        const buttonContainer = document.getElementById("button-container");
+
+        // Clear existing buttons
+        buttonContainer.innerHTML = '';
+
+        // Loop through each row in the tbody
+        for (let i = 0; i < tbody.rows.length; i++) {
+            const row = tbody.rows[i];
+
+            // Create a delete button
+            const deleteButton = document.createElement("div");
+            deleteButton.textContent = "x";
+            deleteButton.className = "delete-button";
+
+            // Add a click event listener to the delete button
+            deleteButton.addEventListener("click", function() {
+                // Delete the corresponding row from the table
+                row.remove();
+                // Update the delete buttons
+                addDeleteButtons();
+            });
+
+            // Append the delete button to the button container
+            buttonContainer.appendChild(deleteButton);
+        }
+    }
+
+    // Add delete buttons initially (if there are any rows to start with)
+    addDeleteButtons();
+
+    // Your existing code to add rows can go here.
+    // Make sure to call addDeleteButtons() after adding a new row.
+});
+
+//When user clicks the add book button, a new row is created and the user can edit cells
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the button element by its id
+    const addButton = document.getElementById("btn-add");
+
+    // Add a click event listener to the button
+    addButton.addEventListener("click", function() {
+        console.log("click");
+
+        // Get the tbody element by its id
+        const tbody = document.getElementById("libTable").getElementsByTagName("tbody")[0];
+
+        // Create a new row and append it to the tbody
+        const newRow = tbody.insertRow();
+
+        // Define the number of columns in the table
+        const numColumns = 4;
+
+        // Loop through each cell in the new row
+        for (let i = 0; i < numColumns; i++) {
+            // Insert a new cell
+            const newCell = newRow.insertCell();
+
+            // Create an input element
+            const input = document.createElement("input");
+
+            // Add the input element to the cell
+            newCell.appendChild(input);
+        }
+    });
+    addDeleteButtons();
+});
+
+// When a user clicks save, save the table input
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the save button element by its id
+    const saveButton = document.getElementById("btn-save");
+
+    // Add a click event listener to the save button
+    saveButton.addEventListener("click", function() {
+        // Get the tbody element by its id
+        const tbody = document.getElementById("libTable").getElementsByTagName("tbody")[0];
+
+        // Loop through each row in the tbody
+        for (let i = 0; i < tbody.rows.length; i++) {
+            const row = tbody.rows[i];
+
+            // Loop through each cell in the row
+            for (let j = 0; j < row.cells.length; j++) {
+                const cell = row.cells[j];
+
+                // Get the input element in the cell
+                const input = cell.getElementsByTagName("input")[0];
+
+                // If an input element exists, replace it with its value
+                if (input) {
+                    const value = input.value;
+                    cell.innerHTML = value;
+                }
+            }
+        }
+    });
+});

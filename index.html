@@ -7,19 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <table id="libTable">
-    <caption><b>Library</b></caption>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Pages</th>
-                <th>Author</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
 
+    <!-- TAble -->
+    <div class="table-container">
+        <table id="libTable">
+        <caption><b>Library</b></caption>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be appended here -->
+            </tbody>
+        </table>
+        <div id="button-container">
+            <!-- Delete buttons will be appended here -->
+        </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="actions">
+        <button id="btn-add">Add Book</button>
+        <button id="btn-save">Save</button>
+    </div>
 
     <script src="libraryscript.js"></script>
 </body>
