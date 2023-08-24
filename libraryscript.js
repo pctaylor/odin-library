@@ -81,15 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     addDeleteButtons();
 
     // Your existing code to add rows can go here.
-    // Make sure to call addDeleteButtons() after adding a new row.
-});
-
-//When user clicks the add book button, a new row is created and the user can edit cells
-document.addEventListener("DOMContentLoaded", function() {
-    // Get the button element by its id
     const addButton = document.getElementById("btn-add");
-
-    // Add a click event listener to the button
     addButton.addEventListener("click", function() {
         console.log("click");
 
@@ -113,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function() {
             // Add the input element to the cell
             newCell.appendChild(input);
         }
+        addDeleteButtons();
     });
-    addDeleteButtons();
 });
 
 // When a user clicks save, save the table input
@@ -146,4 +138,34 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+});
+
+// Update read based on click
+// Function to toggle the "Read" status in the table
+function toggleReadStatus(tableId) {
+    // Get the tbody element by its id
+    const tbody = document.getElementById(tableId).getElementsByTagName("tbody")[0];
+
+    // Loop through each row in the tbody
+    for (let i = 0; i < tbody.rows.length; i++) {
+        const row = tbody.rows[i];
+
+        // Get the cell in the "Read" column (fourth column, index 3)
+        const readCell = row.cells[3];
+
+        // Add a click event listener to the cell
+        readCell.addEventListener("click", function() {
+            // Toggle the cell's value between "read" and "not read"
+            if (readCell.textContent.toLowerCase() === "read") {
+                readCell.textContent = "not read";
+            } else {
+                readCell.textContent = "read";
+            }
+        });
+    }
+}
+
+// Call the function for the table with id "libTable"
+document.addEventListener("DOMContentLoaded", function() {
+    toggleReadStatus("libTable");
 });
