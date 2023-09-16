@@ -1,7 +1,22 @@
 // using https://javascript.info/class
 
+// Put everything in a class
+class Library {
+
+    // Constructor
+    constructor() {
+
+    }
+
+    // Methods
+
+    
+}
+
+
 // Define what a book is - 'author', 'title', 'number of pages', 
 // 'whether it's been read' -- anything else you want
+
 
 // Create an array to store books and put the books in
 
