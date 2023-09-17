@@ -1,24 +1,36 @@
-// using https://javascript.info/class
+// Define what a book is - 'author', 'title', 'number of pages', 
+// 'whether it's been read' -- anything else you want
+class Book {
+    constructor(author, title, pages, readStatus, rating) {
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.rating = rating;
+        this.book = {
+            author,
+            title,
+            pages,
+            readStatus,
+            rating
+        };
+    }
+}
+const lotr = new Book("JRR Tolkein", "The Lord of the Rings", 444, "Read", 4);
+console.log(lotr)
 
 // Put everything in a class
 class Library {
 
-    // Constructor
+    // Create an array to store books and put the books in
     constructor() {
-
+        this.bookList = []
     }
-
-    // Methods
-
-    
+    add(book) {
+        return this.bookList.push(book);
+    }
 }
-
-
-// Define what a book is - 'author', 'title', 'number of pages', 
-// 'whether it's been read' -- anything else you want
-
-
-// Create an array to store books and put the books in
+const userLibrary = new Library
+userLibrary.add(lotr)
 
 // Take user input on books to add to book array
 
