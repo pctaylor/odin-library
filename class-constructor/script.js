@@ -30,9 +30,8 @@ userLibrary.add(_1984)
 console.log(userLibrary)
 
 // Display each book on a page in a table
-function displayBooks(bookList) {
+function displayInitialBooks(bookList) {
     const tableBody = document.getElementById("data-table").getElementsByTagName('tbody')[0]
-    console.log(tableBody);
 
     //Clear Existing Rows
     tableBody.inert = "";
@@ -46,11 +45,25 @@ function displayBooks(bookList) {
         });
     });
 };
-displayBooks(userLibrary.bookList)
+const userLibraryDisplay = displayInitialBooks(userLibrary.bookList);
 
 // Take user input on books to add to book array
 
 // Add a 'new book' button 
+
+// Create an empty row on table
+function addRow() {
+    const addBookTrigger = document.getElementById("data-table").getElementsByTagName('tbody')[0]
+    const tableBody = document.getElementById("data-table").getElementsByTagName('tbody')[0]
+    const newRow = tableBody.insertRow(tableBody.rows.length);
+    
+    for (let i=0; i < 5; i++) {
+        const cell = newRow.insertCell(i);
+        cell.innerHTML = "";
+    }
+}
+// Listen for the click event on the button
+document.getElementById("newBook").addEventListener("click", addRow);
 
 // The 'new book' button brings up a form with 'author', 'title', 
 //'number of pages', 'whether it's been read' -- anything else you want
