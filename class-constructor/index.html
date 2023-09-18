@@ -8,15 +8,35 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="table">
-        <table>
+
+    <div class="table-container" id="table-container">
+        <table id="data-table">
             <thead>
                 <tr>
-                    <th>this is is a cell in a row</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Pages</th>
+                    <th>Read</th>
+                    <th>Rating</th>
                 </tr>
             </thead>
+            <tbody>
+
+            </tbody>
         </table>
     </div>
-    <div class="newBook">Add Book</div>
+    
+    <div class="form-container">
+        <form action="#" method="POST" id="user-form">
+          <input type="text" name="author" placeholder="Author" class="form-input">
+          <input type="email" name="title" placeholder="Title" class="form-input">
+          <input type="password" name="pages" placeholder="Pages" class="form-input">
+          <input type="text" name="read-status" placeholder="Read?" class="form-input">
+          <input type="text" name="rating" placeholder="Rating" class="form-input">
+          <input type="submit" value="Submit" class="form-input">
+        </form>
+      </div>
+
+    <button class="newBook" id="newBook">Add Book</button>
 </body>
 </html>

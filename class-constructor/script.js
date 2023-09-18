@@ -1,22 +1,17 @@
 // Define what a book is - 'author', 'title', 'number of pages', 
-// 'whether it's been read' -- anything else you want
+// 'whether it's been read', and 'rating'
 class Book {
     constructor(author, title, pages, readStatus, rating) {
         this.author = author;
         this.title = title;
         this.pages = pages;
+        this.readStatus = readStatus;
         this.rating = rating;
-        this.book = {
-            author,
-            title,
-            pages,
-            readStatus,
-            rating
-        };
     }
 }
-const lotr = new Book("JRR Tolkein", "The Lord of the Rings", 444, "Read", 4);
-console.log(lotr)
+const lotr = new Book("JRR Tolkein", "The Lord of the Rings", 1200, "Read", 4);
+const _1984 = new Book('George Orwell', '1984', 328, 'Not Read', 4.5);
+console.log(_1984)
 
 // Put everything in a class
 class Library {
@@ -31,11 +26,29 @@ class Library {
 }
 const userLibrary = new Library
 userLibrary.add(lotr)
+userLibrary.add(_1984)
 console.log(userLibrary)
 
-// Take user input on books to add to book array
-
 // Display each book on a page in a table
+function displayBooks(bookList) {
+    const tableBody = document.getElementById("data-table").getElementsByTagName('tbody')[0]
+    console.log(tableBody);
+
+    //Clear Existing Rows
+    tableBody.inert = "";
+
+    // Loop through the array and populate the table
+    bookList.forEach((book, listIndex) => {
+        const newRow = tableBody.insertRow(listIndex);
+        Object.values(book).forEach((value, i) => {
+            const cell = newRow.insertCell(i);
+            cell.textContent = value;
+        });
+    });
+};
+displayBooks(userLibrary.bookList)
+
+// Take user input on books to add to book array
 
 // Add a 'new book' button 
 

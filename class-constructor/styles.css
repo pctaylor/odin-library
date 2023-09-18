@@ -1,0 +1,30 @@
+* {
+    outline: solid 1px black;
+}
+
+/* TABLE */
+table {
+    width: 80vw;
+    border-collapse: collapse;
+}
+
+th, td {
+border: 1px solid black;
+text-align: left;
+padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+  
+/* Add new book form */
+.form-container {
+    display: flex;
+    width: 100vw;
+  }
+  
+input {
+    margin: 5px;
+    width: 10vw;
+}
