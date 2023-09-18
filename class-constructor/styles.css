@@ -4,14 +4,14 @@
 
 /* TABLE */
 table {
-    width: 80vw;
     border-collapse: collapse;
 }
 
 th, td {
 border: 1px solid black;
 text-align: left;
-padding: 8px;
+padding: 16px;
+
 }
 
 th {

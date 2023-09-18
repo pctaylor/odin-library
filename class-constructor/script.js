@@ -72,6 +72,26 @@ function addRow() {
       input.className = "form-input";
       cell.appendChild(input);
     }
+
+    // Add a cell with a "Save" button
+    const saveCell = newRow.insertCell(5);
+    const saveButton = document.createElement("button");
+    saveButton.innerHTML = "Save";
+    saveButton.className = "save-button";
+    saveButton.addEventListener("click", function() {
+        const row = this.parentNode.parentNode; // Get the parent row of the clicked button
+        const inputs = row.querySelectorAll("input"); // Get all input elements in the row
+        const rowData = {};
+
+        // Loop through each input to collect their values
+        inputs.forEach((input, index) => {
+            const placeholder = input.placeholder.toLowerCase().replace("?", "").replace(" ", "-"); // Convert placeholder to key
+            rowData[placeholder] = input.value; // Store input value in rowData object
+        });
+
+        console.log("Row Data:", rowData);
+    });
+    saveCell.appendChild(saveButton);
   }
   
   // Listen for the click event on the button
