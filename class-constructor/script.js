@@ -52,18 +52,31 @@ const userLibraryDisplay = displayInitialBooks(userLibrary.bookList);
 // Add a 'new book' button 
 
 // Create an empty row on table
+// Function to add a new row to the table
 function addRow() {
-    const addBookTrigger = document.getElementById("data-table").getElementsByTagName('tbody')[0]
-    const tableBody = document.getElementById("data-table").getElementsByTagName('tbody')[0]
-    const newRow = tableBody.insertRow(tableBody.rows.length);
-    
-    for (let i=0; i < 5; i++) {
-        const cell = newRow.insertCell(i);
-        cell.innerHTML = "";
+    const table = document.getElementById("data-table").getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow(table.rows.length);
+  
+    // Define the input types for each cell
+    const inputTypes = ["text", "text", "number", "text", "number"];
+  
+    // Define the input placeholders for each cell
+    const placeholders = ["Author", "Title", "Pages", "Read?", "Rating"];
+  
+    // Add cells with input fields to the row
+    for (let i = 0; i < 5; i++) {
+      const cell = newRow.insertCell(i);
+      const input = document.createElement("input");
+      input.type = inputTypes[i];
+      input.placeholder = placeholders[i];
+      input.className = "form-input";
+      cell.appendChild(input);
     }
-}
-// Listen for the click event on the button
-document.getElementById("newBook").addEventListener("click", addRow);
+  }
+  
+  // Listen for the click event on the button
+  document.getElementById("newBook").addEventListener("click", addRow);
+  
 
 // The 'new book' button brings up a form with 'author', 'title', 
 //'number of pages', 'whether it's been read' -- anything else you want
