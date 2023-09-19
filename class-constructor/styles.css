@@ -1,24 +1,29 @@
+/*
 * {
     outline: solid 1px black;
 }
+*/
 
 /* TABLE */
 table {
     border-collapse: collapse;
     font-family: Arial, sans-serif;
-    width: 80vw;
+    margin: 10vw;
 }
 
 th, td {
 border: 1px solid black;
 text-align: left;
-padding: 16px;
+padding: 8px;
+min-width: ;
+max-width: ;
 }
 
 th {
     background-color: #594caf;
     color: white;
     text-align: left;
+    font-size: medium;
 }
 
 /* Style for table rows */
@@ -46,13 +51,48 @@ td {
     text-align: left;
 }
   
-/* Add new book form */
-.form-container {
-    display: flex;
-    width: 100vw;
-  }
   
 input {
-    margin: 5px;
     width: 10vw;
 }
+
+
+/* Save button */
+/* Style the button */
+.save-button {
+    /* Make the button a circle */
+    border-radius: 50%;
+    
+    /* Set the background color to green */
+    background-color: green;
+    
+    /* Set the width and height to make it small */
+    width: 30px;
+    height: 30px;
+    
+    /* Remove border */
+    border: none;
+    
+    /* Set the text color to white */
+    color: white;
+    
+    /* Center the text */
+    text-align: center;
+    
+    /* Vertically align the text */
+    line-height: 30px;
+    
+    /* Remove any default padding and margin */
+    padding: 0;
+    margin: 0;
+    
+    /* Optional: Add some hover effect */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .saveButton:hover {
+    background-color: darkgreen;
+  }
+  

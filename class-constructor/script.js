@@ -76,7 +76,7 @@ function addRow() {
     // Add a cell with a "Save" button
     const saveCell = newRow.insertCell(5);
     const saveButton = document.createElement("button");
-    saveButton.innerHTML = "Save";
+    saveButton.innerHTML = "✓";
     saveButton.className = "save-button";
     saveCell.appendChild(saveButton);
     saveButton.addEventListener("click", function() {
