@@ -5,17 +5,45 @@
 /* TABLE */
 table {
     border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    width: 80vw;
 }
 
 th, td {
 border: 1px solid black;
 text-align: left;
 padding: 16px;
-
 }
 
 th {
+    background-color: #594caf;
+    color: white;
+    text-align: left;
+}
+
+/* Style for table rows */
+tr {
+    transition: background-color 0.3s ease; /* Optional: for smooth transition */
+}
+  
+/* Style for table rows on hover */
+/* Hover effect for all rows */
+tr:hover {
+    background-color: #cdcdcdde;
+  }
+  
+/* Different hover effect for even rows */
+tr:nth-child(even):hover {
+background-color: #aaaaaa;
+}
+
+tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+  
+td {
+    border: 1px solid #ddd;
+    text-align: left;
 }
   
 /* Add new book form */
