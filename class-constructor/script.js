@@ -78,6 +78,7 @@ function addRow() {
     const saveButton = document.createElement("button");
     saveButton.innerHTML = "Save";
     saveButton.className = "save-button";
+    saveCell.appendChild(saveButton);
     saveButton.addEventListener("click", function() {
         const row = this.parentNode.parentNode; // Get the parent row of the clicked button
         const inputs = row.querySelectorAll("input"); // Get all input elements in the row
@@ -87,15 +88,21 @@ function addRow() {
         inputs.forEach((input, index) => {
             const placeholder = input.placeholder.toLowerCase().replace("?", "").replace(" ", "-"); // Convert placeholder to key
             rowData[placeholder] = input.value; // Store input value in rowData object
-        });
+        
+            // Replace the input field with its value
+            const cell = input.parentNode;
+            cell.innerHTML = input.value;
+          });
 
         console.log("Row Data:", rowData);
+
+        // Remove the save button after saving
+        this.parentNode.removeChild(this);
     });
-    saveCell.appendChild(saveButton);
   }
   
-  // Listen for the click event on the button
-  document.getElementById("newBook").addEventListener("click", addRow);
+// Listen for the click event on the button
+document.getElementById("newBook").addEventListener("click", addRow);
   
 
 // The 'new book' button brings up a form with 'author', 'title', 
