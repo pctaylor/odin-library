@@ -5,18 +5,22 @@
 */
 
 /* TABLE */
+.table-container {
+    overflow-x: auto;
+}
+
 table {
     border-collapse: collapse;
     font-family: Arial, sans-serif;
-    margin: 10vw;
+    margin: 20px;
+    table-layout: fixed;
+    width: 100%;
 }
 
 th, td {
-border: 1px solid black;
-text-align: left;
-padding: 8px;
-min-width: ;
-max-width: ;
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
 }
 
 th {
@@ -51,13 +55,15 @@ td {
     text-align: left;
 }
   
-  
-input {
-    width: 10vw;
-}
 
 
 /* Save button */
+th#disappearSave {
+    width: 60px;
+    border: none;
+    background-color: none;
+}
+
 /* Style the button */
 .save-button {
     /* Make the button a circle */
