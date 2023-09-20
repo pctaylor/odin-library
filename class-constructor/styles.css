@@ -60,9 +60,15 @@ td {
 /* Save button */
 th#disappearSave {
     width: 60px;
-    border: none;
-    background-color: none;
+    border: 0 !important;
+    background-color: transparent;
 }
+
+th#disappearSave, td:last-child {
+    border: 0;
+    background-color: transparent;
+}
+
 
 /* Style the button */
 .save-button {
